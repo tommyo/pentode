@@ -1,0 +1,27 @@
+{
+  "name": "@pentode/core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "TommyO <tom@ussie.rocks>",
+  "homepage": "https://github.com/tommyo/pentode#readme",
+  "license": "MIT",
+  "main": "dist/core.js",
+  "module": "dist/core.module.js",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommyo/pentode.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tommyo/pentode/issues"
+  }
+}

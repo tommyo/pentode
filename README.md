@@ -12,7 +12,19 @@
 
 ## Platform support
 
-As you can see in the directory structure, I'm pretty ambitious about truly cross-platform. Although priority sits with web/ios/android.
+As you can see I'm pretty ambitious about truly cross-platform. Although priority sits with web/ios/android.
+
+ - [ ] android
+ - [ ] ios
+ - [ ] web/pwa
+ - [ ] electron
+ - [ ] MacOS
+ - [ ] Windows
+ - [ ] Qt
+ - [ ] NativeScript
+ - [ ] React Native
+ - [ ] [Universal Windows Platform](https://docs.microsoft.com/en-us/windows/uwp/)
+ - [ ] [Catalyst](https://9to5mac.com/guides/project-catalyst/)
 
 ## What's in a name?
 
