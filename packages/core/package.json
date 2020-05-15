@@ -23,5 +23,13 @@
   },
   "bugs": {
     "url": "https://github.com/tommyo/pentode/issues"
+  },
+  "peerDependencies": {
+    "@reactivex/rxjs": "^6.5.5",
+    "rxjs": "^6.5.5"
+  },
+  "devDependencies": {
+    "@reactivex/rxjs": "^6.5.5",
+    "rxjs": "^6.5.5"
   }
 }
