@@ -20,6 +20,7 @@ export default class PentodeCommon {
 
   public Plugins = new Map<string, PentodePlugin>();
 
+  // TODO what is this for?
   public static convertFileSrc(url?: string): string | undefined {
     if (!url) {
       return url;
@@ -40,14 +41,14 @@ export default class PentodeCommon {
 
   // FIXME this should probably take a PentodeNativeRequest, and build the request elsewhere
   // TODO what exactly is `post()` doing?
-  public static toNative<T>(pluginId: string, methodName: string, data = {}, save = false): Observable<T> {
+  public static toNative<T = null>(pluginId: string, methodName: string, data: T, save = false): Observable<T> {
     const res = new Subject<T>();
 
     // eslint-disable-next-line no-plusplus
     const callId = ++nextCallId;
     calls.set(callId, res);
 
-    const call: PentodeNativeRequest = { pluginId, methodName, callId, data, save };
+    const call: PentodeNativeRequest<T> = { pluginId, methodName, callId, data, save };
     this.post(call);
     return res.asObservable();
   }
@@ -55,7 +56,7 @@ export default class PentodeCommon {
   public static fromNative(result: PentodeNativeResponse) {
     const out = calls.get(result.callId);
     if (!out) {
-      console.log(`we do not have that call on record (${result.callId})`, result);
+      console.log(`we do not have that call on record: (${result.callId})`, result);
       return;
     }
 
@@ -73,4 +74,3 @@ export default class PentodeCommon {
     }
   }
 }
-

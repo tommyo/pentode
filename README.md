@@ -41,6 +41,10 @@ setTimeout(() => {
 }, 1000);
 ```
 
+### Did someone say Observables?
+
+We're looking into exposing two-way Observable patterns across the bridge. What are the performance implications? What are the use cases? Is it even worht considering? We think so!
+
 ### Each platform project should be its own thing.
 
 Each platform should have its own build logic, importing common libraries where needed, rather than a centralized place where platforms are added. If you like the centralized aspect then arrange in a monorepo and use tools specialized for that behavior, like [lerna](http://lerna.js.org). We'll show you how.

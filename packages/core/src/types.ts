@@ -17,20 +17,20 @@ interface Pentode extends PentodePlatform, PentodeInteraction {
 
 type CallId = number;
 
-interface PentodeNativeRequest {
+interface PentodeNativeRequest<T = void> {
   readonly pluginId: string;
   readonly methodName: string;
   readonly callId: CallId;
   readonly save: boolean;
-  readonly data?: any;
+  readonly data: T;
 }
 
-interface PentodeNativeResponse {
+interface PentodeNativeResponse<T = void> {
   readonly pluginId: string;
   readonly methodName: string;
   readonly callId: CallId;
   readonly save: boolean;
-  readonly data?: any;
+  readonly data?: T;
   readonly error?: any;
 }
 
