@@ -1,6 +1,6 @@
 # pentode
 
-[pentode logo](assets/pentode.svg)
+![pentode logo](assets/pentode.svg)
 
 [Capacitor](https://capacitor.ionicframework.com/) is a fantastic framework for generating cross-device hybrid apps quickly and easily. It is a great step in the right direction from Cordova/PhoneGap, which feels dated. So why, then, another library?
 
