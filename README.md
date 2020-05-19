@@ -2,21 +2,15 @@
 
 ![pentode logo](assets/pentode.svg)
 
-[Capacitor](https://capacitor.ionicframework.com/) is a fantastic framework for generating cross-device hybrid apps quickly and easily. It is a great step in the right direction from Cordova/PhoneGap, which feels dated. So why, then, another library?
+At this point `pentode` is conceptual, and may never see a production release. If you're looking for a hybrid framework, we suggest [Capacitor](https://capacitor.ionicframework.com/), a fantastic framework for generating cross-device hybrid apps quickly and easily. It is a great step in the right direction from Cordova/PhoneGap, which feels dated. 
 
-## Cordova was a great start
-
-## Ionic made it easier
-
-## What Capacitor got right
-
-## What Capacitor got wrong
+So why, then, another library?
 
 ## What does pentode do differently?
 
 ### We're not really an App, we're a...
 
-Cordova and Capacitor both assume you're building a complete app using their toolkit. A WebView, however, is just a component, widget, piece of the pie, whatever. You want to build an app that is 100% WebView? Cool! We'll show you how. But otherwise, why force the issue? Put us where you want.
+Most other hybrid frameworks assume you're building a complete app using their toolkit. A WebView, however, is just a component that can interact with other components of the app to exchange data and state. We want to make it possible to build a webview however you want into an otherwise native app. You want to build an app that is 100% WebView? Cool! We'll show you how. But otherwise, why force the issue? Put us where you want.
 
 ### Our Javascript parts are Written in Typescript, transpiled to everything else.
 
@@ -33,6 +27,7 @@ However we may build `CordovaWrapper` and `CapacitorWrapper` plugins to allow th
 ### Always return an Observable.
 
 Rather than deal with supporting synchronous and multiple responses with a callback, and one-and-done asynchronous with Promises, we use RxJS Observables, which support the best of both worlds, with the added benefit of being lazy. We'll show you how best to handle these.
+
 ```es6
 // often you'll want to wait on something async.
 const asPromised = await MyPlugin.doSomethingPromising().toPromise();
@@ -80,6 +75,20 @@ As you can see we're pretty ambitious about being truly cross-platform. (Althoug
  - [ ] [WebAssembly](https://pspdfkit.com/blog/2018/running-native-code-in-electron-and-the-case-for-webassembly/)
  - [ ] [Universal Windows Platform](https://docs.microsoft.com/en-us/windows/uwp/)
  - [ ] [Catalyst](https://9to5mac.com/guides/project-catalyst/)
+
+### web/pwa
+
+Ideally we will move as much as possible to webworkers when possible. Or at least give the developer that possibility. Get native-like code into a seperate thread.
+
+### android
+
+Use [JetPack guidance](https://developer.android.com/jetpack/docs/guide) whenever possible.
+
+## Some thoughts
+
+* Use [quicktype](https://github.com/quicktype/quicktype) to generate plugin models for consistncy across all platforms.
+* Use [lerna](http://lerna.js.org) or an equivalent to assist with multiple platform support.
+
 
 ## What's in a name?
 
